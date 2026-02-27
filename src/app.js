@@ -1,22 +1,19 @@
-import "bootstrap";
-import "./style.css";
+window.onload = () => {
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+  const who = ['The dog', 'My grandma', 'The mailman', 'My bird'];
+  const action = ['ate', 'peed', 'crushed', 'broke'];
+  const what = ['my homework', 'my phone', 'the car'];
+  const when = [
+    'before the class',
+    'when I was sleeping',
+    'while I was exercising',
+    'during my lunch',
+    'while I was praying'
+  ];
 
-window.onload = function() {
+  const random = arr => arr[Math.floor(Math.random() * arr.length)];
 
-  let who = ['Mi perro', 'Mi abuela', 'El cartero', 'Mi pájaro'];
-  let action = ['se comió', 'orinó en', 'aplastó', 'rompió'];
-  let what = ['mi tarea', 'mi teléfono', 'el coche'];
-  let when = ['antes de la clase', 'mientras dormía', 'mientras hacía ejercicio', 'durante el almuerzo'];
+  document.querySelector("#excuse").innerHTML =
+    `${random(who)} ${random(action)} ${random(what)} ${random(when)}.`;
 
-  let randomWho = who[Math.floor(Math.random() * who.length)];
-  let randomAction = action[Math.floor(Math.random() * action.length)];
-  let randomWhat = what[Math.floor(Math.random() * what.length)];
-  let randomWhen = when[Math.floor(Math.random() * when.length)];
-
-  let excuse = randomWho + " " + randomAction + " " + randomWhat + " " + randomWhen;
-
-  document.querySelector("#excuse").innerHTML = excuse;
 };
